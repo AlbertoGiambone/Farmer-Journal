@@ -27,13 +27,13 @@ class FieldsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = fieldTable.dequeueReusableCell(withIdentifier: "cell") as! FieldsVCTableViewCell
+        let cell = fieldTable.dequeueReusableCell(withIdentifier: "cell")
         
         let surface = FieldList[indexPath.row].value(forKey: "fieldArea")
         let name = FieldList[indexPath.row].value(forKey: "fieldName")
-        cell.textLabel!.text = String("\(name!)")
-        cell.detailTextLabel!.text = String("\(surface!) \(defFieldUnit!)")
-        return cell
+        cell?.textLabel!.text = String("\(name!)")
+        cell?.detailTextLabel!.text = String("\(surface!) \(defFieldUnit!)")
+        return cell!
     }
     
     
@@ -85,8 +85,6 @@ class FieldsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         fieldTable.delegate = self
         fieldTable.dataSource = self
         
-        fieldTable.rowHeight = UITableView.automaticDimension
-        fieldTable.estimatedRowHeight = 110
         
         defFieldUnit = UserDefaults.standard.object(forKey: "UnitName") as? String
     }
@@ -95,6 +93,7 @@ class FieldsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewWillAppear(true)
         
         queryDatabase()
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

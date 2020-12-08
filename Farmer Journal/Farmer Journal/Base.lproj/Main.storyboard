@@ -343,12 +343,28 @@
                                     <constraint firstAttribute="height" constant="420" id="qw9-HJ-S6N"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="50" id="YW1-aH-xst">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" textLabel="Vmd-H5-mMl" detailTextLabel="816-8w-m5J" rowHeight="50" style="IBUITableViewCellStyleSubtitle" id="YW1-aH-xst">
                                         <rect key="frame" x="0.0" y="28" width="374" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="YW1-aH-xst" id="70d-zO-AtG">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Vmd-H5-mMl">
+                                                    <rect key="frame" x="20" y="8" width="33" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="816-8w-m5J">
+                                                    <rect key="frame" x="20" y="28.5" width="44" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
@@ -401,11 +417,63 @@
                         <outlet property="fieldName" destination="9a2-qJ-zwz" id="GGj-GJ-ms8"/>
                         <outlet property="operationTable" destination="Zf4-FN-CMn" id="ijb-T8-kgt"/>
                         <outlet property="seasonGrow" destination="Npy-8D-5My" id="wXF-pM-jgs"/>
+                        <segue destination="jjQ-Uu-fJX" kind="show" identifier="editOP" id="Ofn-ec-1zL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ssT-Sw-IQx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2137.68115942029" y="-248.4375"/>
+        </scene>
+        <!--Editing Operation View Controller-->
+        <scene sceneID="sYM-fj-Sqe">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="jjQ-Uu-fJX" customClass="EditingOperationViewController" customModule="Farmer_Journal" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1iO-Z8-nXb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bBK-ol-Sm7">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Item" image="arrow.left" catalog="system" id="1Og-81-bKj">
+                                        <connections>
+                                            <segue destination="2tQ-Bz-jmY" kind="show" id="m9i-fP-XwM"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="uw5-zz-GUX"/>
+                                    <barButtonItem style="done" systemItem="save" id="v94-gC-4lE">
+                                        <connections>
+                                            <action selector="saveB:" destination="jjQ-Uu-fJX" id="byf-eb-0xD"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Operation Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RB1-Ze-zua">
+                                <rect key="frame" x="20" y="132" width="374" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Galvji" family="Galvji" pointSize="19"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="SfH-XA-VpQ">
+                                <rect key="frame" x="0.0" y="205" width="414" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </datePicker>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ibx-pM-2qo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Qjz-PP-Vhn"/>
+                    <connections>
+                        <outlet property="OpName" destination="RB1-Ze-zua" id="UAG-Bf-VO3"/>
+                        <outlet property="datePicker" destination="SfH-XA-VpQ" id="gNd-Ir-OHD"/>
+                        <outlet property="saveButton" destination="v94-gC-4lE" id="j5F-IV-uDo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lMe-BI-ipX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3171.0144927536235" y="-248.4375"/>
         </scene>
         <!--Operation Field View Controller-->
         <scene sceneID="GoP-5s-XFG">
@@ -430,7 +498,7 @@
                                 <items>
                                     <barButtonItem image="arrow.left" catalog="system" id="RS2-HM-p3S">
                                         <connections>
-                                            <segue destination="2tQ-Bz-jmY" kind="show" id="LHE-C1-TDw"/>
+                                            <segue destination="2tQ-Bz-jmY" kind="show" identifier="Back" id="LHE-C1-TDw"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="YfM-Ir-c47"/>
@@ -481,7 +549,7 @@
         </designable>
     </designables>
     <inferredMetricsTieBreakers>
-        <segue reference="5U8-sQ-IvY"/>
+        <segue reference="m9i-fP-XwM"/>
         <segue reference="zzt-j5-cKc"/>
         <segue reference="KVi-xp-Xwb"/>
     </inferredMetricsTieBreakers>

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		A00364A62576C23F00543FBB /* SettingUnitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00364A52576C23F00543FBB /* SettingUnitViewController.swift */; };
 		A00364AA257A80A600543FBB /* OperationFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00364A9257A80A600543FBB /* OperationFieldViewController.swift */; };
+		A01D85D2257EACD90022B6AB /* EditingOperationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01D85D1257EACD90022B6AB /* EditingOperationViewController.swift */; };
 		A09948A8256A68F100E4E136 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09948A7256A68F100E4E136 /* AppDelegate.swift */; };
 		A09948AA256A68F100E4E136 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09948A9256A68F100E4E136 /* SceneDelegate.swift */; };
 		A09948AF256A68F100E4E136 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A09948AD256A68F100E4E136 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		A00364A52576C23F00543FBB /* SettingUnitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingUnitViewController.swift; sourceTree = "<group>"; };
 		A00364A9257A80A600543FBB /* OperationFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationFieldViewController.swift; sourceTree = "<group>"; };
+		A01D85D1257EACD90022B6AB /* EditingOperationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditingOperationViewController.swift; sourceTree = "<group>"; };
 		A09948A4256A68F100E4E136 /* Farmer Journal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Farmer Journal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A09948A7256A68F100E4E136 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A09948A9256A68F100E4E136 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 		A09948CB256A718E00E4E136 /* FieldsVC */ = {
 			isa = PBXGroup;
 			children = (
+				A01D85D1257EACD90022B6AB /* EditingOperationViewController.swift */,
 				A09948C8256A702200E4E136 /* FieldsViewController.swift */,
 				A0CBE855257621C2003F41B3 /* FieldDetailViewController.swift */,
 				A0E5856D256AA709005AB41F /* AddFieldViewController.swift */,
@@ -202,6 +205,7 @@
 				A00364A62576C23F00543FBB /* SettingUnitViewController.swift in Sources */,
 				A09948C1256A696F00E4E136 /* HomeViewController.swift in Sources */,
 				A09948C9256A702200E4E136 /* FieldsViewController.swift in Sources */,
+				A01D85D2257EACD90022B6AB /* EditingOperationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

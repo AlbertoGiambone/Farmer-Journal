@@ -27,10 +27,6 @@ class OperationFieldViewController: UIViewController {
     
     
     
-    //MARK: Database Call
-    
-    let dataBase = CKContainer.default().privateCloudDatabase
-    
     
 
     override func viewDidLoad() {
@@ -47,21 +43,29 @@ class OperationFieldViewController: UIViewController {
     }
 
     
+    //MARK: Database Call
+    
+    let dataBase = CKContainer.default().privateCloudDatabase
+    
+    
+    
     @IBAction func saveButton(_ sender: UIBarButtonItem) {
+        
+        let newRecord = CKRecord(recordType: fieldName.text!)
         
         if operationName.text?.isEmpty == true {
             saveBarButton.isEnabled = false
         }else{
-            let newRecord = CKRecord(recordType: fieldName.text!)
+            
+            print(datePicker.date)
             
             newRecord.setValuesForKeys(["fieldOperation": String(operationName.text!), "date": datePicker.date])
             dataBase.save(newRecord) { (record, Error) in
                 guard record != nil else {return}
                 print("Saved Record!")
             }
-        
+            performSegue(withIdentifier: "Back", sender: self)
         }
-    
     
     
 
